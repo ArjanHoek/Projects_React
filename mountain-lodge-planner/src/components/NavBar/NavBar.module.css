@@ -1,0 +1,41 @@
+.NavBar {
+  position: absolute;
+  top: 78px;
+  width: 100vw;
+  background-color: var(--devil-blue);
+  z-index: 80;
+  transition: transform 200ms;
+}
+
+.NavBar ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.NavBar ul li {
+  padding: 10px;
+  transition: background-color 200ms;
+}
+
+.NavBar a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.NavBar h3 {
+  color: var(--opaque-white);
+  text-align: center;
+  padding: 10px;
+}
+
+.NavBar ul li:hover {
+  cursor: pointer;
+  background-color: var(--desert);
+}
+
+.NavBar.hide {
+  transform: translateX(-100%);
+}

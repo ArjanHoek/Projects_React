@@ -1,0 +1,894 @@
+{
+  "lodges" : {
+    "-MDOp9yNpGc6GmMZscJa" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDOpNqKVjlUHjFx50de",
+        "outward" : {
+          "hours" : "6",
+          "minutes" : "45"
+        },
+        "return" : {
+          "hours" : "7",
+          "minutes" : "0"
+        }
+      } ],
+      "altitude" : "2238",
+      "name" : "karl-von-edel-hütte",
+      "region" : "tirol"
+    },
+    "-MDOpNqKVjlUHjFx50de" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDOp9yNpGc6GmMZscJa",
+        "outward" : {
+          "hours" : "7",
+          "minutes" : "0"
+        },
+        "return" : {
+          "hours" : "6",
+          "minutes" : "45"
+        }
+      }, {
+        "id" : "-MDOpUsQrnso67rGOeme",
+        "outward" : {
+          "hours" : "4",
+          "minutes" : "40"
+        },
+        "return" : {
+          "hours" : "4",
+          "minutes" : "45"
+        }
+      } ],
+      "altitude" : "2177",
+      "name" : "kasseler hütte",
+      "region" : "tirol"
+    },
+    "-MDOpUsQrnso67rGOeme" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDOpNqKVjlUHjFx50de",
+        "outward" : {
+          "hours" : "4",
+          "minutes" : "45"
+        },
+        "return" : {
+          "hours" : "4",
+          "minutes" : "40"
+        }
+      }, {
+        "id" : "-MDxkvCge0835gRaUPK-",
+        "outward" : {
+          "hours" : "5",
+          "minutes" : "20"
+        },
+        "return" : {
+          "hours" : "6",
+          "minutes" : "5"
+        }
+      } ],
+      "altitude" : "2227",
+      "name" : "greizer hütte",
+      "region" : "tirol"
+    },
+    "-MDOppoVQGuHUonK5jsl" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDxkvCge0835gRaUPK-",
+        "outward" : {
+          "hours" : "4",
+          "minutes" : "50"
+        },
+        "return" : {
+          "hours" : "4",
+          "minutes" : "50"
+        }
+      }, {
+        "id" : "-MDOpyW3FOnBl9syb8DH",
+        "outward" : {
+          "hours" : "4",
+          "minutes" : "15"
+        },
+        "return" : {
+          "hours" : "4",
+          "minutes" : "5"
+        }
+      }, {
+        "id" : "-MDToW4DA801mcLPa-Ji",
+        "outward" : {
+          "hours" : "4",
+          "minutes" : "50"
+        },
+        "return" : {
+          "hours" : "4",
+          "minutes" : "40"
+        }
+      }, {
+        "id" : "-MDToIa7mil6uhcCd9S3",
+        "outward" : {
+          "hours" : "8",
+          "minutes" : "0"
+        },
+        "return" : {
+          "hours" : "7",
+          "minutes" : "30"
+        }
+      }, {
+        "id" : "-MDTo4I0dX4-mD6S5t60",
+        "outward" : {
+          "hours" : "5",
+          "minutes" : "30"
+        },
+        "return" : {
+          "hours" : "5",
+          "minutes" : "10"
+        }
+      }, {
+        "id" : "-MDTnKwu_y5FaYEmije3",
+        "outward" : {
+          "hours" : "6",
+          "minutes" : "55"
+        },
+        "return" : {
+          "hours" : "7",
+          "minutes" : "15"
+        }
+      } ],
+      "altitude" : "2295",
+      "name" : "furtschaglhaus",
+      "region" : "tirol"
+    },
+    "-MDOpyW3FOnBl9syb8DH" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDOppoVQGuHUonK5jsl",
+        "outward" : {
+          "hours" : "4",
+          "minutes" : "5"
+        },
+        "return" : {
+          "hours" : "4",
+          "minutes" : "15"
+        }
+      }, {
+        "id" : "-MDTo4I0dX4-mD6S5t60",
+        "outward" : {
+          "hours" : "2",
+          "minutes" : "5"
+        },
+        "return" : {
+          "hours" : "2",
+          "minutes" : "0"
+        }
+      }, {
+        "id" : "-MDToW4DA801mcLPa-Ji",
+        "outward" : {
+          "hours" : "3",
+          "minutes" : "40"
+        },
+        "return" : {
+          "hours" : "3",
+          "minutes" : "40"
+        }
+      }, {
+        "id" : "-MDTnKwu_y5FaYEmije3",
+        "outward" : {
+          "hours" : "4",
+          "minutes" : "25"
+        },
+        "return" : {
+          "hours" : "4",
+          "minutes" : "25"
+        }
+      }, {
+        "id" : "-MDToIa7mil6uhcCd9S3",
+        "outward" : {
+          "hours" : "6",
+          "minutes" : "55"
+        },
+        "return" : {
+          "hours" : "6",
+          "minutes" : "30"
+        }
+      }, {
+        "id" : "-MDTnRmOfxpuVPfGylhV",
+        "outward" : {
+          "hours" : "5",
+          "minutes" : "35"
+        },
+        "return" : {
+          "hours" : "5",
+          "minutes" : "45"
+        }
+      } ],
+      "altitude" : "2388",
+      "name" : "olpererhütte",
+      "region" : "tirol"
+    },
+    "-MDOrKe99GUeH_dGzzMR" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDTo4I0dX4-mD6S5t60",
+        "outward" : {
+          "hours" : "7",
+          "minutes" : "45"
+        },
+        "return" : {
+          "hours" : "7",
+          "minutes" : "20"
+        }
+      } ],
+      "altitude" : "1921",
+      "name" : "gamshütte",
+      "region" : "tirol"
+    },
+    "-MDThbFFVFgrvmzWyJ9y" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDcSh9UJmmgLygFpht-",
+        "outward" : {
+          "hours" : "5",
+          "minutes" : "5"
+        },
+        "return" : {
+          "hours" : "5",
+          "minutes" : "0"
+        }
+      } ],
+      "altitude" : "2369",
+      "name" : "innsbrucker hütte",
+      "region" : "tirol"
+    },
+    "-MDThuJGc-_Ff2LWuNY2" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDcSh9UJmmgLygFpht-",
+        "outward" : {
+          "hours" : "3",
+          "minutes" : "5"
+        },
+        "return" : {
+          "hours" : "3",
+          "minutes" : "5"
+        }
+      }, {
+        "id" : "-MDThyouy8BgJnyUJrMd",
+        "outward" : {
+          "hours" : "2",
+          "minutes" : "10"
+        },
+        "return" : {
+          "hours" : "2",
+          "minutes" : "25"
+        }
+      }, {
+        "id" : "-MDTiEKDTtbiOFVBmurt",
+        "outward" : {
+          "hours" : "4",
+          "minutes" : "50"
+        },
+        "return" : {
+          "hours" : "4",
+          "minutes" : "55"
+        }
+      }, {
+        "id" : "-MDTiJMoRhC1t6lFZgX1",
+        "outward" : {
+          "hours" : "6",
+          "minutes" : "5"
+        },
+        "return" : {
+          "hours" : "6",
+          "minutes" : "15"
+        }
+      } ],
+      "altitude" : "2278",
+      "name" : "nürnberger hütte",
+      "region" : "tirol"
+    },
+    "-MDThyouy8BgJnyUJrMd" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDcSh9UJmmgLygFpht-",
+        "outward" : {
+          "hours" : "5",
+          "minutes" : "30"
+        },
+        "return" : {
+          "hours" : "5",
+          "minutes" : "20"
+        }
+      }, {
+        "id" : "-MDThuJGc-_Ff2LWuNY2",
+        "outward" : {
+          "hours" : "2",
+          "minutes" : "25"
+        },
+        "return" : {
+          "hours" : "2",
+          "minutes" : "10"
+        }
+      }, {
+        "id" : "-MDTiJMoRhC1t6lFZgX1",
+        "outward" : {
+          "hours" : "6",
+          "minutes" : "40"
+        },
+        "return" : {
+          "hours" : "6",
+          "minutes" : "35"
+        }
+      }, {
+        "id" : "-MDTiEKDTtbiOFVBmurt",
+        "outward" : {
+          "hours" : "2",
+          "minutes" : "40"
+        },
+        "return" : {
+          "hours" : "2",
+          "minutes" : "30"
+        }
+      } ],
+      "altitude" : "2191",
+      "name" : "sulzenauhütte",
+      "region" : "tirol"
+    },
+    "-MDTiEKDTtbiOFVBmurt" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDThuJGc-_Ff2LWuNY2",
+        "outward" : {
+          "hours" : "4",
+          "minutes" : "55"
+        },
+        "return" : {
+          "hours" : "4",
+          "minutes" : "50"
+        }
+      }, {
+        "id" : "-MDThyouy8BgJnyUJrMd",
+        "outward" : {
+          "hours" : "2",
+          "minutes" : "30"
+        },
+        "return" : {
+          "hours" : "2",
+          "minutes" : "40"
+        }
+      }, {
+        "id" : "-MDTiJMoRhC1t6lFZgX1",
+        "outward" : {
+          "hours" : "6",
+          "minutes" : "25"
+        },
+        "return" : {
+          "hours" : "6",
+          "minutes" : "20"
+        }
+      } ],
+      "altitude" : "2308",
+      "name" : "dresdner hütte",
+      "region" : "tirol"
+    },
+    "-MDTiJMoRhC1t6lFZgX1" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDThuJGc-_Ff2LWuNY2",
+        "outward" : {
+          "hours" : "6",
+          "minutes" : "15"
+        },
+        "return" : {
+          "hours" : "6",
+          "minutes" : "5"
+        }
+      }, {
+        "id" : "-MDThyouy8BgJnyUJrMd",
+        "outward" : {
+          "hours" : "6",
+          "minutes" : "35"
+        },
+        "return" : {
+          "hours" : "6",
+          "minutes" : "40"
+        }
+      }, {
+        "id" : "-MDTiEKDTtbiOFVBmurt",
+        "outward" : {
+          "hours" : "6",
+          "minutes" : "20"
+        },
+        "return" : {
+          "hours" : "6",
+          "minutes" : "25"
+        }
+      }, {
+        "id" : "-MDTigxC6t3xAuKmvCWR",
+        "outward" : {
+          "hours" : "4",
+          "minutes" : "5"
+        },
+        "return" : {
+          "hours" : "4",
+          "minutes" : "15"
+        }
+      } ],
+      "altitude" : "2286",
+      "name" : "neue regensburger hütte",
+      "region" : "tirol"
+    },
+    "-MDTigxC6t3xAuKmvCWR" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDTiJMoRhC1t6lFZgX1",
+        "outward" : {
+          "hours" : "4",
+          "minutes" : "15"
+        },
+        "return" : {
+          "hours" : "4",
+          "minutes" : "5"
+        }
+      }, {
+        "id" : "-MDTjFP0gTMQE8Rb4g_a",
+        "outward" : {
+          "hours" : "6",
+          "minutes" : "45"
+        },
+        "return" : {
+          "hours" : "6",
+          "minutes" : "50"
+        }
+      } ],
+      "altitude" : "2147",
+      "name" : "franz-senn-hütte",
+      "region" : "tirol"
+    },
+    "-MDTjFP0gTMQE8Rb4g_a" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDTigxC6t3xAuKmvCWR",
+        "outward" : {
+          "hours" : "6",
+          "minutes" : "50"
+        },
+        "return" : {
+          "hours" : "6",
+          "minutes" : "45"
+        }
+      } ],
+      "altitude" : "2237",
+      "name" : "starkenberger hütte",
+      "region" : "tirol"
+    },
+    "-MDTnKwu_y5FaYEmije3" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDOpyW3FOnBl9syb8DH",
+        "outward" : {
+          "hours" : "4",
+          "minutes" : "25"
+        },
+        "return" : {
+          "hours" : "4",
+          "minutes" : "25"
+        }
+      }, {
+        "id" : "-MDOppoVQGuHUonK5jsl",
+        "outward" : {
+          "hours" : "7",
+          "minutes" : "15"
+        },
+        "return" : {
+          "hours" : "6",
+          "minutes" : "55"
+        }
+      }, {
+        "id" : "-MDToW4DA801mcLPa-Ji",
+        "outward" : {
+          "hours" : "5",
+          "minutes" : "40"
+        },
+        "return" : {
+          "hours" : "5",
+          "minutes" : "30"
+        }
+      }, {
+        "id" : "-MDToIa7mil6uhcCd9S3",
+        "outward" : {
+          "hours" : "7",
+          "minutes" : "10"
+        },
+        "return" : {
+          "hours" : "7",
+          "minutes" : "20"
+        }
+      }, {
+        "id" : "-MDTnRmOfxpuVPfGylhV",
+        "outward" : {
+          "hours" : "4",
+          "minutes" : "35"
+        },
+        "return" : {
+          "hours" : "4",
+          "minutes" : "40"
+        }
+      } ],
+      "altitude" : "2324",
+      "name" : "geraer hütte",
+      "region" : "tirol"
+    },
+    "-MDTnRmOfxpuVPfGylhV" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDTnKwu_y5FaYEmije3",
+        "outward" : {
+          "hours" : "4",
+          "minutes" : "40"
+        },
+        "return" : {
+          "hours" : "4",
+          "minutes" : "35"
+        }
+      }, {
+        "id" : "-MDTo4I0dX4-mD6S5t60",
+        "outward" : {
+          "hours" : "4",
+          "minutes" : "15"
+        },
+        "return" : {
+          "hours" : "4",
+          "minutes" : "0"
+        }
+      }, {
+        "id" : "-MDTsovP8nQajADvK71O",
+        "outward" : {
+          "hours" : "5",
+          "minutes" : "35"
+        },
+        "return" : {
+          "hours" : "5",
+          "minutes" : "40"
+        }
+      }, {
+        "id" : "-MDOpyW3FOnBl9syb8DH",
+        "outward" : {
+          "hours" : "5",
+          "minutes" : "45"
+        },
+        "return" : {
+          "hours" : "5",
+          "minutes" : "35"
+        }
+      } ],
+      "altitude" : "2313",
+      "name" : "tuxerjochhaus",
+      "region" : "tirol"
+    },
+    "-MDTo4I0dX4-mD6S5t60" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDOpyW3FOnBl9syb8DH",
+        "outward" : {
+          "hours" : "2",
+          "minutes" : "0"
+        },
+        "return" : {
+          "hours" : "2",
+          "minutes" : "5"
+        }
+      }, {
+        "id" : "-MDOppoVQGuHUonK5jsl",
+        "outward" : {
+          "hours" : "5",
+          "minutes" : "10"
+        },
+        "return" : {
+          "hours" : "5",
+          "minutes" : "30"
+        }
+      }, {
+        "id" : "-MDToW4DA801mcLPa-Ji",
+        "outward" : {
+          "hours" : "4",
+          "minutes" : "45"
+        },
+        "return" : {
+          "hours" : "5",
+          "minutes" : "0"
+        }
+      }, {
+        "id" : "-MDTnRmOfxpuVPfGylhV",
+        "outward" : {
+          "hours" : "4",
+          "minutes" : "0"
+        },
+        "return" : {
+          "hours" : "4",
+          "minutes" : "15"
+        }
+      }, {
+        "id" : "-MDOrKe99GUeH_dGzzMR",
+        "outward" : {
+          "hours" : "7",
+          "minutes" : "20"
+        },
+        "return" : {
+          "hours" : "7",
+          "minutes" : "45"
+        }
+      } ],
+      "altitude" : "2498",
+      "name" : "friesenberghaus",
+      "region" : "tirol"
+    },
+    "-MDToIa7mil6uhcCd9S3" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDOpyW3FOnBl9syb8DH",
+        "outward" : {
+          "hours" : "6",
+          "minutes" : "30"
+        },
+        "return" : {
+          "hours" : "6",
+          "minutes" : "55"
+        }
+      }, {
+        "id" : "-MDOppoVQGuHUonK5jsl",
+        "outward" : {
+          "hours" : "7",
+          "minutes" : "30"
+        },
+        "return" : {
+          "hours" : "8",
+          "minutes" : "0"
+        }
+      }, {
+        "id" : "-MDToW4DA801mcLPa-Ji",
+        "outward" : {
+          "hours" : "3",
+          "minutes" : "5"
+        },
+        "return" : {
+          "hours" : "3",
+          "minutes" : "30"
+        }
+      }, {
+        "id" : "-MDTnKwu_y5FaYEmije3",
+        "outward" : {
+          "hours" : "7",
+          "minutes" : "20"
+        },
+        "return" : {
+          "hours" : "7",
+          "minutes" : "10"
+        }
+      } ],
+      "altitude" : "2693",
+      "name" : "landshuter europahütte",
+      "region" : "tirol/südtirol"
+    },
+    "-MDToW4DA801mcLPa-Ji" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDOpyW3FOnBl9syb8DH",
+        "outward" : {
+          "hours" : "3",
+          "minutes" : "40"
+        },
+        "return" : {
+          "hours" : "3",
+          "minutes" : "40"
+        }
+      }, {
+        "id" : "-MDOppoVQGuHUonK5jsl",
+        "outward" : {
+          "hours" : "4",
+          "minutes" : "40"
+        },
+        "return" : {
+          "hours" : "4",
+          "minutes" : "50"
+        }
+      }, {
+        "id" : "-MDTo4I0dX4-mD6S5t60",
+        "outward" : {
+          "hours" : "5",
+          "minutes" : "0"
+        },
+        "return" : {
+          "hours" : "4",
+          "minutes" : "45"
+        }
+      }, {
+        "id" : "-MDToIa7mil6uhcCd9S3",
+        "outward" : {
+          "hours" : "3",
+          "minutes" : "30"
+        },
+        "return" : {
+          "hours" : "3",
+          "minutes" : "5"
+        }
+      }, {
+        "id" : "-MDTnKwu_y5FaYEmije3",
+        "outward" : {
+          "hours" : "5",
+          "minutes" : "30"
+        },
+        "return" : {
+          "hours" : "5",
+          "minutes" : "40"
+        }
+      } ],
+      "altitude" : "2276",
+      "name" : "pfitscher-joch-haus",
+      "region" : "südtirol"
+    },
+    "-MDTsk9sivgdpOSh1iP2" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDTsovP8nQajADvK71O",
+        "outward" : {
+          "hours" : "7",
+          "minutes" : "0"
+        },
+        "return" : {
+          "hours" : "7",
+          "minutes" : "20"
+        }
+      } ],
+      "altitude" : "2610",
+      "name" : "glungezerhütte",
+      "region" : "tirol"
+    },
+    "-MDTsovP8nQajADvK71O" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDTnRmOfxpuVPfGylhV",
+        "outward" : {
+          "hours" : "5",
+          "minutes" : "40"
+        },
+        "return" : {
+          "hours" : "5",
+          "minutes" : "35"
+        }
+      }, {
+        "id" : "-MDTsk9sivgdpOSh1iP2",
+        "outward" : {
+          "hours" : "7",
+          "minutes" : "20"
+        },
+        "return" : {
+          "hours" : "7",
+          "minutes" : "0"
+        }
+      }, {
+        "id" : "-MDTtCGZaLVOBlbpNupi",
+        "outward" : {
+          "hours" : "5",
+          "minutes" : "20"
+        },
+        "return" : {
+          "hours" : "5",
+          "minutes" : "25"
+        }
+      } ],
+      "altitude" : "2019",
+      "name" : "lizumer hütte",
+      "region" : "tirol"
+    },
+    "-MDTtCGZaLVOBlbpNupi" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDTsovP8nQajADvK71O",
+        "outward" : {
+          "hours" : "5",
+          "minutes" : "25"
+        },
+        "return" : {
+          "hours" : "5",
+          "minutes" : "20"
+        }
+      }, {
+        "id" : "-MDTtJGCUoRLZa04Rxds",
+        "outward" : {
+          "hours" : "5",
+          "minutes" : "50"
+        },
+        "return" : {
+          "hours" : "5",
+          "minutes" : "35"
+        }
+      } ],
+      "altitude" : "1799",
+      "name" : "weidener hütte",
+      "region" : "tirol"
+    },
+    "-MDTtJGCUoRLZa04Rxds" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDTtCGZaLVOBlbpNupi",
+        "outward" : {
+          "hours" : "5",
+          "minutes" : "35"
+        },
+        "return" : {
+          "hours" : "5",
+          "minutes" : "50"
+        }
+      }, {
+        "id" : "-MDTtOg9qoYV0Seqzc4j",
+        "outward" : {
+          "hours" : "5",
+          "minutes" : "45"
+        },
+        "return" : {
+          "hours" : "5",
+          "minutes" : "50"
+        }
+      } ],
+      "altitude" : "2117",
+      "name" : "rastkogelhütte",
+      "region" : "tirol"
+    },
+    "-MDTtOg9qoYV0Seqzc4j" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDTtJGCUoRLZa04Rxds",
+        "outward" : {
+          "hours" : "5",
+          "minutes" : "50"
+        },
+        "return" : {
+          "hours" : "5",
+          "minutes" : "45"
+        }
+      } ],
+      "altitude" : "2237",
+      "name" : "kellerjochhütte",
+      "region" : "tirol"
+    },
+    "-MDcSh9UJmmgLygFpht-" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDThbFFVFgrvmzWyJ9y",
+        "outward" : {
+          "hours" : "5",
+          "minutes" : "0"
+        },
+        "return" : {
+          "hours" : "5",
+          "minutes" : "5"
+        }
+      }, {
+        "id" : "-MDThuJGc-_Ff2LWuNY2",
+        "outward" : {
+          "hours" : "3",
+          "minutes" : "5"
+        },
+        "return" : {
+          "hours" : "3",
+          "minutes" : "5"
+        }
+      }, {
+        "id" : "-MDThyouy8BgJnyUJrMd",
+        "outward" : {
+          "hours" : "5",
+          "minutes" : "20"
+        },
+        "return" : {
+          "hours" : "5",
+          "minutes" : "30"
+        }
+      } ],
+      "altitude" : "2413",
+      "name" : "bremer hütte",
+      "region" : "tirol"
+    },
+    "-MDxkvCge0835gRaUPK-" : {
+      "adjacentLodges" : [ {
+        "id" : "-MDOpUsQrnso67rGOeme",
+        "outward" : {
+          "hours" : "6",
+          "minutes" : "5"
+        },
+        "return" : {
+          "hours" : "5",
+          "minutes" : "20"
+        }
+      }, {
+        "id" : "-MDOppoVQGuHUonK5jsl",
+        "outward" : {
+          "hours" : "4",
+          "minutes" : "50"
+        },
+        "return" : {
+          "hours" : "4",
+          "minutes" : "50"
+        }
+      } ],
+      "altitude" : "2042",
+      "name" : "berliner hütte",
+      "region" : "tirol"
+    }
+  }
+}

@@ -1,14 +1,17 @@
-import * as actionTypes from './actions'
+import * as actionTypes from '../actions/actionTypes'
 
 const initialState = {
-  ingredients: {
-    salad: 0,
-    cheese: 0,
-    meat: 0,
-    bacon: 0
-  },
+  ingredients: null,
   totalPrice: 4,
-  purchasable: false
+  purchasable: false,
+  error: false
+}
+
+const INGREDIENT_PRICES = {
+  salad: 0.5,
+  cheese: 0.4,
+  meat: 1.3,
+  bacon: 0.7
 }
 
 const reducer = (state = initialState, action) => {
@@ -20,19 +23,19 @@ const reducer = (state = initialState, action) => {
 
   switch (action.type) {
     case actionTypes.ADD_INGREDIENT:
-      ingredients[action.payload.ingredient] = state.ingredients[action.payload.ingredient] + 1
+      ingredients[action.ingredient] = state.ingredients[action.ingredient] + 1
       return {
         ...state,
         ingredients,
-        totalPrice: state.totalPrice + action.payload.price,
+        totalPrice: state.totalPrice + INGREDIENT_PRICES[action.ingredient],
         purchasable: setPurchasable(ingredients)
       }
     case actionTypes.REMOVE_INGREDIENT:
-      ingredients[action.payload.ingredient] = state.ingredients[action.payload.ingredient] - 1
-      return ingredients[action.payload.ingredient] < 0 ? state : {
+      ingredients[action.ingredient] = state.ingredients[action.ingredient] - 1
+      return ingredients[action.ingredient] < 0 ? state : {
         ...state,
         ingredients,
-        totalPrice: state.totalPrice - action.payload.price,
+        totalPrice: state.totalPrice - INGREDIENT_PRICES[action.ingredient],
         purchasable: setPurchasable(ingredients)
       }
     default:

@@ -1,0 +1,62 @@
+.LodgeCard {
+  background-color: var(--swan-white);
+  border-radius: 5px;
+  margin: 10px 5px 0;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: auto 250px 120px;
+  gap: 10px;
+}
+
+.HeadingContainer {
+  background-color: var(--devil-blue);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.LodgeCard p {
+  text-transform: capitalize;
+}
+
+.info {
+  padding: 5px 0
+}
+
+.iconsContainer {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.iconsContainer i {
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  opacity: 0.6;
+  margin-left: 5px;
+  transition: opacity 200ms;
+}
+
+.delete {
+  background-color: var(--eye-of-newt);
+}
+
+.delete:hover {
+  cursor: pointer;
+  opacity: 1
+}
+
+.edit {
+  background-color: var(--palm-springs-splash);
+}
+
+.edit:hover {
+  cursor: pointer;
+  opacity: 1
+}

@@ -1,0 +1,25 @@
+.Header {
+  position: sticky;
+  top: 0;
+  background-color: var(--eye-of-newt);
+  color: #fff;
+  width: 100vw;
+  padding: 20px;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: 2em 1fr 2em;
+}
+
+.Header h1 {
+  text-align: center;
+}
+
+.Header i {
+  transition: color 200ms;
+  transform: translateY(4px);
+}
+
+.Header i:hover {
+  cursor: pointer;
+  color: var(--opaque-white)
+}

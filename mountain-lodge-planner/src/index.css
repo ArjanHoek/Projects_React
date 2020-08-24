@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+:root {
+  --swan-white: #f7f1e3;
+  --crocodile-tooth: #d1ccc0;
+  --alameda-ochre: #cc8e35;
+  --palm-springs-splash: #218c74;
+  --opaque-white: rgba(255, 255, 255, 0.6);
+  --eye-of-newt: #b33939;
+  --devil-blue: #227093;
+  --desert: #ccae62;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.Overview h2 {
+  background-attachment: blue;
+}

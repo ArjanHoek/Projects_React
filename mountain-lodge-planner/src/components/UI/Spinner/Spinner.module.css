@@ -1,0 +1,36 @@
+.SpinnerWrapper {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.Spinner {
+  border: 5px solid var(--devil-blue);
+  border-left: none;
+  border-right: none;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  animation: Rotator 1000ms linear infinite;
+}
+
+.Text {
+  position: absolute;
+  color: var(--devil-blue);
+  opacity: 0.6;
+}
+
+@keyframes Rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    opacity: 0.3;
+    border-width: 2px;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

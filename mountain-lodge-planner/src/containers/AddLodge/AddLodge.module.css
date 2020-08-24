@@ -1,0 +1,99 @@
+.Form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Form h2 {
+  background-color: var(--alameda-ochre);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  text-transform: capitalize;
+  position: sticky;
+  top: 78px;
+  z-index: 20;
+}
+
+.Form div {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  background-color: var(--swan-white);
+  padding: 10px;
+}
+
+.Form input {
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 20px;
+  border: none;
+  background-color: var(--alameda-ochre);
+  color: #fff;
+  opacity: 0.8;
+  transition: opacity 200ms;
+  text-transform: capitalize;
+}
+
+.Form input:focus {
+  outline: none;
+  opacity: 1
+}
+
+.Form input::placeholder {
+  color: var(--opaque-white)
+}
+
+.Form button {
+  border: none;
+  outline: none;
+  padding: 10px;
+  background-color: var(--palm-springs-splash);
+  color: #fff;
+  text-transform: uppercase;
+  opacity: 0.6;
+  transition: opacity 200ms
+}
+
+.Form button:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.Form>* {
+  margin-bottom: 10px
+}
+
+.Buttons {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.Buttons button {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  opacity: 0.6;
+  transition: opacity 200ms
+}
+
+.Buttons button:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.Buttons button:disabled {
+  opacity: 0.1;
+  cursor: not-allowed;
+}
+
+.previousButton {
+  background-color: var(--devil-blue);
+}
+
+.addButton {
+  width: 100%;
+  background-color: var(--palm-springs-splash);
+}
