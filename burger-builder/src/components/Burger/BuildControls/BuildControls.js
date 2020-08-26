@@ -18,7 +18,7 @@ const buildControls = props => {
 
   return (
     <div className={classes.BuildControls}>
-      <p>CurrentPrice: <strong>{props.price.toFixed(2)}</strong></p>
+      <p>Current price: <strong>{props.price.toFixed(2)}</strong></p>
       {controlComponents}
       <button
         onClick={props.purchased}
