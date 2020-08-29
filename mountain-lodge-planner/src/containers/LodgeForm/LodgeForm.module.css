@@ -1,0 +1,63 @@
+.InputControl {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  background-color: var(--swan-white);
+  padding: 10px;
+}
+
+.InputContainer {
+  border-radius: 5px;
+  margin-left: 20px;
+  border: none;
+  opacity: 0.8;
+  transition: opacity 200ms;
+  text-transform: capitalize;
+}
+
+.InputContainer button {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  color: #fff;
+  opacity: 0.6;
+  transition: opacity 200ms;
+  background-color: var(--palm-springs-splash);
+  border-radius: 5px;
+}
+
+.InputContainer button:disabled {
+  opacity: 0.1;
+  cursor: not-allowed;
+}
+
+.InputField {
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 20px;
+  border: none;
+  background-color: var(--alameda-ochre);
+  color: #fff;
+  opacity: 0.8;
+  transition: opacity 200ms;
+  text-transform: capitalize;
+}
+
+.LodgeForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.LodgeForm input:focus {
+  outline: none;
+  opacity: 1
+}
+
+.LodgeForm input::placeholder {
+  color: var(--opaque-white)
+}
+
+.LodgeForm>* {
+  margin-bottom: 10px
+}

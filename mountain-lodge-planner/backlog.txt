@@ -1,5 +1,6 @@
 TO DO
 # When opening the navigation menu, make it disappear when user clicks outside the menu
+# Organise the application by creating more components
 
 DONE
 # Show 'Editing data...' spinner after editing lodge

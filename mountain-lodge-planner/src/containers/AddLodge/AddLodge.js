@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import classes from './AddLodge.module.css';
 import axios from '../../axios';
 import Spinner from '../../components/UI/Spinner/Spinner'
+import HeadingSecondary from '../../components/UI/Heading/HeadingSecondary/HeadingSecondary';
 
 class Form extends Component {
   constructor() {
@@ -49,7 +50,7 @@ class Form extends Component {
     let output = (
       <Fragment>
         <form className={classes.Form} onKeyDown={this.submitHandler}>
-          <h2 className={classes.Heading}>Add new lodge</h2>
+          <HeadingSecondary>Add New Lodge</HeadingSecondary>
           <div>
             <label>Name</label>
             <input

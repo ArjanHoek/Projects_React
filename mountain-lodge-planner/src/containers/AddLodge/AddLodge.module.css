@@ -3,17 +3,6 @@
   flex-direction: column;
 }
 
-.Form h2 {
-  background-color: var(--alameda-ochre);
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-  text-transform: capitalize;
-  position: sticky;
-  top: 78px;
-  z-index: 20;
-}
-
 .Form div {
   display: grid;
   grid-template-columns: 1fr 2fr;
