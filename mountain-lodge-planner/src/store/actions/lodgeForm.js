@@ -8,7 +8,14 @@ export const changeInput = (name, value) => {
   return { type: actionTypes.CHANGE_INPUT, name, value }
 }
 
-// const addAdjacentLodge = (state, action) => {
-//   return { ...state, }
-// }
+export const addAdjacentLodge = lodges => {
+  return { type: actionTypes.ADD_ADJACENT_LODGE, lodges }
+}
 
+export const editAdjacentLodge = (editedLodge, id) => {
+  return { type: actionTypes.EDIT_ADJACENT_LODGE, editedLodge, id }
+}
+
+export const removeAdjacentLodge = id => {
+  return { type: actionTypes.REMOVE_ADJACENT_LODGE, id }
+}

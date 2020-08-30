@@ -1,21 +1,23 @@
 import React, { Component } from 'react'
 import classes from './AddAdjacentLodge.module.css'
 
+import * as actionCreators from '../../store/actions/lodgeForm'
+import { connect } from 'react-redux';
+
 class AddAdjacentLodge extends Component {
   selectChangeHandler = event => {
     const { name, value } = event.target;
-    this.props.edit({
-      ...this.props.adjacentLodge,
-      [name]: value
-    })
+    this.props.onEditAdjacentLodge({
+      ...this.props.adjacentLodge, [name]: value
+    }, this.props.adjacentLodge.id)
   }
 
   inputChangeHandler = (event, type) => {
     const { name, value } = event.target;
-    const duration = { ...this.props.adjacentLodge[name] };
-    duration[type] = value;
-    const newState = { ...this.props.adjacentLodge, [name]: duration }
-    this.props.edit(newState)
+    const duration = { ...this.props.adjacentLodge[name], [type]: value };
+    this.props.onEditAdjacentLodge({
+      ...this.props.adjacentLodge, [name]: duration
+    }, this.props.adjacentLodge.id)
   }
 
   render() {
@@ -31,11 +33,11 @@ class AddAdjacentLodge extends Component {
           <select
             name="id"
             onChange={this.selectChangeHandler}
-            defaultValue={this.props.defaultValue}
+            defaultValue={this.props.adjacentLodge.id}
           >{options}</select>
           <i
             className="fas fa-times"
-            onClick={this.props.remove}
+            onClick={() => this.props.onRemoveAdjacentLodge(this.props.adjacentLodge.id)}
           ></i>
         </div>
 
@@ -98,4 +100,20 @@ class AddAdjacentLodge extends Component {
   }
 }
 
-export default AddAdjacentLodge
+
+
+const mapStateToProps = state => {
+  return {
+    lodgeData: state.lodgeForm.lodgeData,
+    id: state.lodgeForm.id
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onEditAdjacentLodge: (editedLodge, id) => dispatch(actionCreators.editAdjacentLodge(editedLodge, id)),
+    onRemoveAdjacentLodge: id => dispatch(actionCreators.removeAdjacentLodge(id))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddAdjacentLodge)

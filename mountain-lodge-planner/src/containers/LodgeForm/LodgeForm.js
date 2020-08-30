@@ -17,45 +17,6 @@ class Form extends Component {
       : this.props.history.push('/')
   }
 
-  addAdjacentLodge = event => {
-    event.preventDefault();
-    // const adjacentLodges = [...this.props.lodgeData.adjacentLodges]
-    //   .map(i => { return { ...i } });
-    // const notSelf = id => id !== this.props.id;
-    // const notAddedYet = id => !this.props.lodgeData.adjacentLodges.map(i => i.id).includes(id)
-    // const firstLodge = this.props.lodges.filter(lodge => notSelf(lodge.id)
-    //   && notAddedYet(lodge.id))[0];
-    // if (firstLodge) {
-    //   adjacentLodges.push({
-    //     id: firstLodge.id,
-    //     outward: { hours: "", minutes: "" },
-    //     return: { hours: "", minutes: "" }
-    //   })
-    // } else { alert("All possible lodges have already been added") }
-    // const lodgeData = { ...this.props.lodgeData, adjacentLodges };
-    // const newState = { ...this.state, lodgeData }
-    // this.setState(newState);
-  }
-
-  editAdjacentLodge = (id, editedLodge) => {
-    this.setState(prevState => {
-      const adjacentLodges = [...this.props.lodgeData.adjacentLodges]
-        .map(lodge => lodge.id === id ? editedLodge : lodge)
-      const lodgeData = { ...prevState.lodgeData, adjacentLodges };
-      const newState = { ...prevState, lodgeData };
-      return { ...newState }
-    })
-  }
-
-  removeAdjacentLodge = id => {
-    this.setState(prevState => {
-      const adjacentLodges = prevState.lodgeData.adjacentLodges.filter(item => item.id !== id);
-      const lodgeData = { ...prevState.lodgeData, adjacentLodges };
-      const newState = { ...prevState, lodgeData };
-      return { ...newState }
-    })
-  }
-
   render() {
 
     const adjacentLodgeSelectors = this.props.lodgeData.adjacentLodges
@@ -64,20 +25,17 @@ class Form extends Component {
         const notSelf = id => id !== this.props.id;
         const notAddedYet = id => !this.props.lodgeData.adjacentLodges.map(item => item.id).includes(id);
 
-        const test = this.props.lodges.find(test => test.id === item.id)
+        const test = this.props.lodges.find(lodge => lodge.id === item.id)
 
         const options = sort(this.props.lodges
-          .filter(item => notSelf(item.id) && notAddedYet(item.id))
+          .filter(i => notSelf(i.id) && notAddedYet(i.id))
           .concat(test))
 
 
         return <AddAdjacentLodge
           key={item.id}
           adjacentLodge={item}
-          edit={data => this.editAdjacentLodge(item.id, data)}
           options={options}
-          defaultValue={item.id}
-          remove={() => this.removeAdjacentLodge(item.id)}
         />
       })
 
@@ -90,7 +48,6 @@ class Form extends Component {
           <label>Name</label>
           <input
             className={classes.InputField}
-
             type="text"
             name="name"
             value={this.props.lodgeData.name}
@@ -127,7 +84,10 @@ class Form extends Component {
             {adjacentLodgeSelectors}
 
             <button
-              onClick={this.addAdjacentLodge}
+              onClick={event => {
+                event.preventDefault();
+                this.props.onAddAdjacentLodge(this.props.lodges)
+              }}
             >
               <i className="fas fa-plus-square fa-2x"></i>
             </button>
@@ -152,7 +112,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onSetLodgeData: lodge => dispatch(actionCreators.setLodgeData(lodge)),
-    onChangeInput: event => dispatch(actionCreators.changeInput(event.target.name, event.target.value))
+    onChangeInput: event => dispatch(actionCreators.changeInput(event.target.name, event.target.value)),
+    onAddAdjacentLodge: lodges => dispatch(actionCreators.addAdjacentLodge(lodges))
   }
 }
 
