@@ -1,12 +1,11 @@
 import * as actionTypes from './actionTypes'
 import axios from '../../axios';
-import remodelData from '../../hoc/remodelData'
+import remodelData from '../../utilities/remodelData'
 
 // SYNC FUNCTIONS
 export const startLoading = loadingMessage => {
   return { type: actionTypes.START_LOADING, loadingMessage }
 }
-
 
 // HELPER FUNCTIONS FOR ASYNC FUNCTIONS
 const updateDataSuccess = lodges => {

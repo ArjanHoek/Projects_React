@@ -7,6 +7,7 @@ import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
 import ScrollToTop from './components/UI/ScrollToTop/ScrollToTop'
 
 import lodgesReducer from './store/reducers/lodges'
+import lodgeFormReducer from './store/reducers/lodgeForm'
 
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux';
@@ -15,7 +16,8 @@ import thunk from 'redux-thunk';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
-  lodges: lodgesReducer
+  lodges: lodgesReducer,
+  lodgeForm: lodgeFormReducer
 })
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))

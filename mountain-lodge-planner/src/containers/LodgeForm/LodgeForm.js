@@ -3,66 +3,43 @@ import classes from './LodgeForm.module.css'
 import HeadingSecondary from '../../components/UI/Heading/HeadingSecondary/HeadingSecondary';
 import AddAdjacentLodge from '../../components/AddAdjacentLodge/AddAdjacentLodge';
 
-class Form extends Component {
-  state = {
-    lodgeData: {
-      name: "",
-      altitude: "",
-      region: "",
-      adjacentLodges: []
-    },
-  }
+import sort from '../../utilities/sort'
 
+import { connect } from 'react-redux';
+import * as actionCreators from '../../store/actions/lodgeForm'
+
+class Form extends Component {
   componentDidMount() {
     const lodge = this.props.lodges
-      .find(lodge => lodge.name === this.props.paramsID)
-
-    lodge && this.setState({
-      id: lodge.id,
-      lodgeData: {
-        name: lodge.name,
-        altitude: lodge.altitude,
-        region: lodge.region,
-        adjacentLodges: lodge.adjacentLodges
-          ? lodge.adjacentLodges.map(i => { return { ...i } })
-          : []
-      }
-    })
-  }
-
-  compare = (a, b) => a > b ? 1 : a < b ? -1 : 0
-
-  inputChangeHandler = event => {
-    const { name, value } = event.target;
-    this.setState(prevState => {
-      const lodgeData = { ...prevState.lodgeData, [name]: value }
-      return { ...prevState, lodgeData }
-    })
+      .find(lodge => lodge.name === this.props.match.params.id)
+    lodge
+      ? this.props.onSetLodgeData(lodge)
+      : this.props.history.push('/')
   }
 
   addAdjacentLodge = event => {
     event.preventDefault();
-    const adjacentLodges = [...this.state.lodgeData.adjacentLodges]
-      .map(i => { return { ...i } });
-    const notSelf = id => id !== this.state.id;
-    const notAddedYet = id => !this.state.lodgeData.adjacentLodges.map(i => i.id).includes(id)
-    const firstLodge = this.props.lodges.filter(lodge => notSelf(lodge.id)
-      && notAddedYet(lodge.id))[0];
-    if (firstLodge) {
-      adjacentLodges.push({
-        id: firstLodge.id,
-        outward: { hours: "", minutes: "" },
-        return: { hours: "", minutes: "" }
-      })
-    } else { alert("All possible lodges have already been added") }
-    const lodgeData = { ...this.state.lodgeData, adjacentLodges };
-    const newState = { ...this.state, lodgeData }
-    this.setState(newState);
+    // const adjacentLodges = [...this.props.lodgeData.adjacentLodges]
+    //   .map(i => { return { ...i } });
+    // const notSelf = id => id !== this.props.id;
+    // const notAddedYet = id => !this.props.lodgeData.adjacentLodges.map(i => i.id).includes(id)
+    // const firstLodge = this.props.lodges.filter(lodge => notSelf(lodge.id)
+    //   && notAddedYet(lodge.id))[0];
+    // if (firstLodge) {
+    //   adjacentLodges.push({
+    //     id: firstLodge.id,
+    //     outward: { hours: "", minutes: "" },
+    //     return: { hours: "", minutes: "" }
+    //   })
+    // } else { alert("All possible lodges have already been added") }
+    // const lodgeData = { ...this.props.lodgeData, adjacentLodges };
+    // const newState = { ...this.state, lodgeData }
+    // this.setState(newState);
   }
 
   editAdjacentLodge = (id, editedLodge) => {
     this.setState(prevState => {
-      const adjacentLodges = [...this.state.lodgeData.adjacentLodges]
+      const adjacentLodges = [...this.props.lodgeData.adjacentLodges]
         .map(lodge => lodge.id === id ? editedLodge : lodge)
       const lodgeData = { ...prevState.lodgeData, adjacentLodges };
       const newState = { ...prevState, lodgeData };
@@ -81,17 +58,17 @@ class Form extends Component {
 
   render() {
 
-    const adjacentLodgeSelectors = this.state.lodgeData.adjacentLodges
+    const adjacentLodgeSelectors = this.props.lodgeData.adjacentLodges
       .map(item => {
 
-        const notSelf = id => id !== this.state.id;
-        const notAddedYet = id => !this.state.lodgeData.adjacentLodges.map(item => item.id).includes(id);
+        const notSelf = id => id !== this.props.id;
+        const notAddedYet = id => !this.props.lodgeData.adjacentLodges.map(item => item.id).includes(id);
 
         const test = this.props.lodges.find(test => test.id === item.id)
 
-        const options = this.props.lodges
+        const options = sort(this.props.lodges
           .filter(item => notSelf(item.id) && notAddedYet(item.id))
-          .concat(test).sort((a, b) => this.compare(a.name, b.name))
+          .concat(test))
 
 
         return <AddAdjacentLodge
@@ -104,7 +81,7 @@ class Form extends Component {
         />
       })
 
-    return (
+    let output = (
       <form
         className={classes.LodgeForm}
       >
@@ -116,8 +93,8 @@ class Form extends Component {
 
             type="text"
             name="name"
-            value={this.state.lodgeData.name}
-            onChange={this.inputChangeHandler}
+            value={this.props.lodgeData.name}
+            onChange={this.props.onChangeInput}
             placeholder="Name..."
           />
         </div>
@@ -127,8 +104,8 @@ class Form extends Component {
             className={classes.InputField}
             type="text"
             name="altitude"
-            value={this.state.lodgeData.altitude}
-            onChange={this.inputChangeHandler}
+            value={this.props.lodgeData.altitude}
+            onChange={this.props.onChangeInput}
             placeholder="Altitude..."
           />
         </div>
@@ -138,8 +115,8 @@ class Form extends Component {
             className={classes.InputField}
             type="text"
             name="region"
-            value={this.state.lodgeData.region}
-            onChange={this.inputChangeHandler}
+            value={this.props.lodgeData.region}
+            onChange={this.props.onChangeInput}
             placeholder="Region..."
           />
         </div>
@@ -158,7 +135,25 @@ class Form extends Component {
         </div>
       </form>
     )
+
+    return output
   }
 }
 
-export default Form
+const mapStateToProps = state => {
+  return {
+    lodges: state.lodges.lodges,
+    loading: state.lodges.loading,
+    lodgeData: state.lodgeForm.lodgeData,
+    id: state.lodgeForm.id
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onSetLodgeData: lodge => dispatch(actionCreators.setLodgeData(lodge)),
+    onChangeInput: event => dispatch(actionCreators.changeInput(event.target.name, event.target.value))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form)

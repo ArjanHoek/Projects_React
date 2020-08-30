@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+
 import LodgeCard from './LodgeCard/LodgeCard'
+import Spinner from '../UI/Spinner/Spinner'
+import HeadingSecondary from '../UI/Heading/HeadingSecondary/HeadingSecondary'
+
+import sort from '../../utilities/sort'
+
 import classes from './AllLodges.module.css';
 
+import { connect } from 'react-redux';
+import * as actionCreators from '../../store/actions/lodges'
+
 class AllLodges extends Component {
-  state = {
-    searchValue: "",
-    showSearch: false,
-  }
-
-  setShowSearch = () =>
-    this.setState(prevState => {
-      return { showSearch: !prevState.showSearch }
-    })
-
-  setSearchValue = event =>
-    this.setState({ searchValue: event.target.value.toLowerCase() })
+  componentDidMount = () => this.props.onUpdateData()
 
   render() {
+    let output = <Spinner>{this.props.loadingMessage}</Spinner>
+
     let lodgeCards = (
       <div>
         <h3 className={classes.NoData}>No lodges to display</h3>
@@ -24,53 +24,35 @@ class AllLodges extends Component {
     );
 
     if (this.props.lodges) {
-      let lodges = this.props.lodges.filter(lodge => {
-        const length = this.state.searchValue.length;
-        return lodge.name.slice(0, length) === this.state.searchValue.toLowerCase()
-      });
-
-      lodgeCards = lodges.map(lodge => {
-        return (
-          <LodgeCard
-            deleteLodge={() => this.props.deleteLodge(lodge.id)}
-            updateData={this.props.updateData}
-            key={lodge.id}
-            data={lodge}
-          />
-        )
-      })
+      lodgeCards = sort(this.props.lodges)
+        .map(lodge => <LodgeCard key={lodge.id} lodge={lodge} />)
     }
 
-    const searchInputClasses = [classes.searchInput]
+    if (!this.props.loading) {
+      output = (
+        <Fragment>
+          <HeadingSecondary>All lodges</HeadingSecondary>
+          <div className={classes.cards}>{lodgeCards}</div>
+        </Fragment>
+      )
+    }
 
-    !this.state.showSearch && searchInputClasses.push(classes.hide)
-
-    const searchInput = (
-      <input
-        className={searchInputClasses.join(' ')}
-        placeholder="Search..."
-        type="text"
-        value={this.state.searchValue}
-        onChange={this.setSearchValue}
-      />
-    );
-
-    return (
-      <div className={classes.AllLodges}>
-        <h2>
-          <span className={classes.searchContainer}>
-            <i
-              className="fas fa-search"
-              onClick={this.setShowSearch}
-            ></i>
-            {searchInput}
-          </span>
-          <span>All Lodges</span>
-        </h2>
-        <div className={classes.cards}>{lodgeCards}</div>
-      </div>
-    )
+    return output
   }
 }
 
-export default AllLodges
+const mapStateToProps = state => {
+  return {
+    lodges: state.lodges.lodges,
+    loading: state.lodges.loading,
+    loadingMessage: state.lodges.loadingMessage
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onUpdateData: () => dispatch(actionCreators.updateData()),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AllLodges)

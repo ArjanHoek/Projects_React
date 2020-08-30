@@ -3,6 +3,9 @@ import classes from './EditLodge.module.css'
 import axios from '../../axios'
 import LodgeForm from '../../containers/LodgeForm/LodgeForm';
 
+import { connect } from 'react-redux';
+import * as actionCreators from '../../store/actions/lodges'
+
 class EditLodge extends Component {
   state = {
     error: null,
@@ -55,11 +58,7 @@ class EditLodge extends Component {
     let output = (
       <Fragment>
         <LodgeForm
-          lodges={this.props.lodges}
-          lodgeData={this.state.lodgeData}
-          addAdjacentLodge={this.addAdjacentLodge}
-          id={this.state.id}
-          paramsID={this.props.match.params.id}
+          {...this.props}
         />
 
         <div className={classes.Buttons}>
@@ -91,4 +90,16 @@ class EditLodge extends Component {
   }
 }
 
-export default EditLodge
+const mapStateToProps = state => {
+  return {
+    lodges: state.lodges.lodges,
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onUpdateData: () => dispatch(actionCreators.updateData()),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditLodge)
