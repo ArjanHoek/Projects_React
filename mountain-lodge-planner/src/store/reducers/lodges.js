@@ -1,7 +1,7 @@
 import * as actionTypes from '../actions/actionTypes'
 
 // SET INITIAL STATE
-const initialState = { lodges: [], loading: true, loadingMessage: "Loading...", error: null }
+const initialState = { lodges: [], loading: false, loadingMessage: "Loading...", error: null }
 
 // CREATE SOME HELPER FUNCTIONS
 const startLoading = (state, action) => {
@@ -24,6 +24,14 @@ const deleteLodgeFail = (state, action) => {
   return { ...state, loading: false, error: action.error }
 }
 
+const editLodgeSuccess = (state, action) => {
+  return { ...state, loading: false, lodges: action.lodges }
+}
+
+const editLodgeFail = (state, action) => {
+  return { ...state, loading: false, error: action.error }
+}
+
 // CREATE THE ACTUAL REDUCER
 const lodgesReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -34,9 +42,14 @@ const lodgesReducer = (state = initialState, action) => {
     case actionTypes.UPDATE_DATA_FAIL:
       return updateDataFail(state, action)
     case actionTypes.DELETE_LODGE_SUCCESS:
-      return deleteLodgeSuccess(state)
-    case actionTypes.UPDATE_DATA_FAIL:
+      return deleteLodgeSuccess(state, action)
+    case actionTypes.DELETE_LODGE_FAIL:
       return deleteLodgeFail(state, action)
+    case actionTypes.EDIT_LODGE_SUCCESS:
+      return editLodgeSuccess(state, action)
+    case actionTypes.EDIT_LODGE_FAIL:
+      return editLodgeFail(state, action)
+
     default: return state
   }
 }

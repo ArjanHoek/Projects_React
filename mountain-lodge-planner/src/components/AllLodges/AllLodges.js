@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 import * as actionCreators from '../../store/actions/lodges'
 
 class AllLodges extends Component {
-  componentDidMount = () => this.props.onUpdateData()
+  componentDidMount = () => !this.props.loading && this.props.onUpdateData()
 
   render() {
     let output = <Spinner>{this.props.loadingMessage}</Spinner>

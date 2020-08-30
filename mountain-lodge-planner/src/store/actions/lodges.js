@@ -17,11 +17,19 @@ const updateDataFail = error => {
 }
 
 const deleteLodgeSuccess = lodges => {
-  return { type: actionTypes.UPDATE_DATA_SUCCESS, lodges }
+  return { type: actionTypes.DELETE_LODGE_SUCCESS, lodges }
 }
 
 const deleteLodgeFail = error => {
   return { type: actionTypes.DELETE_LODGE_FAIL, error }
+}
+
+const editLodgeSuccess = lodges => {
+  return { type: actionTypes.EDIT_LODGE_SUCCESS, lodges }
+}
+
+const editLodgeFail = error => {
+  return { type: actionTypes.EDIT_LODGE_FAIL, error }
 }
 
 // ASYNC FUNCTIONS
@@ -48,10 +56,46 @@ export const deleteLodge = id => dispatch => {
         }
         delete res.data[id]
         dispatch(startLoading('Updating data...'))
-        axios.put('/lodges.json', res.data)
-          .then(res => dispatch(deleteLodgeSuccess(remodelData(res.data))))
-          .catch(err => deleteLodgeFail(err))
+        setTimeout(() => {
+          axios.put('/lodges.json', res.data)
+            .then(res => dispatch(deleteLodgeSuccess(remodelData(res.data))))
+            .catch(err => dispatch(deleteLodgeFail(err)))
+        }, 500);
+
       })
-      .catch(err => deleteLodgeFail(err))
+      .catch(err => dispatch(deleteLodgeFail(err)))
+  }, 500);
+}
+
+export const editLodge = (id, lodgeData) => dispatch => {
+  dispatch(startLoading('Editing data...'));
+  console.log(lodgeData);
+  setTimeout(() => {
+    axios.get('/lodges.json')
+      .then(res => {
+        for (let key in res.data) {
+          if (!res.data[key].adjacentLodges) {
+            res.data[key].adjacentLodges = []
+          }
+          const filteredAdjacentLodges = res.data[key].adjacentLodges
+            .filter(lodge => lodge.id !== id)
+          res.data[key].adjacentLodges = filteredAdjacentLodges
+        }
+        if (res.data[id]) {
+          res.data[id] = lodgeData;
+          lodgeData.adjacentLodges.forEach(adjLodge => {
+            res.data[adjLodge.id].adjacentLodges.push({
+              id: id,
+              outward: adjLodge.return,
+              return: adjLodge.outward
+            })
+          })
+        }
+        dispatch(startLoading('Updating data...'))
+        axios.put('/lodges.json', res.data)
+          .then(res => dispatch(editLodgeSuccess(remodelData(res.data))))
+          .catch(err => dispatch(editLodgeFail(err)));
+      })
+      .catch(err => dispatch(editLodgeFail(err)))
   }, 500);
 }
