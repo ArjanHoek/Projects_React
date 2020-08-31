@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import classes from './EditLodge.module.css'
 import LodgeForm from '../../containers/LodgeForm/LodgeForm';
+import HeadingSecondary from '../UI/Heading/HeadingSecondary/HeadingSecondary'
 
 import { connect } from 'react-redux';
 import * as actionCreators from '../../store/actions/lodges'
@@ -16,10 +17,11 @@ class EditLodge extends Component {
   render() {
     let output = (
       <Fragment>
+        <HeadingSecondary>Edit Lodge Data</HeadingSecondary>
         <LodgeForm
-          {...this.props}
+          cancel={() => this.props.history.push('/')}
+          paramsID={this.props.match.params.id}
         />
-
         <div className={classes.Buttons}>
           <button
             onClick={this.props.history.goBack}

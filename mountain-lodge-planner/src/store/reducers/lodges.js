@@ -32,6 +32,21 @@ const editLodgeFail = (state, action) => {
   return { ...state, loading: false, error: action.error }
 }
 
+
+
+
+const addLodgeSuccess = (state, action) => {
+  console.log(action.lodges);
+  return { ...state, loading: false, lodges: action.lodges }
+}
+
+const addLodgeFail = (state, action) => {
+  return { ...state, loading: false, error: action.error }
+}
+
+
+
+
 // CREATE THE ACTUAL REDUCER
 const lodgesReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -49,7 +64,10 @@ const lodgesReducer = (state = initialState, action) => {
       return editLodgeSuccess(state, action)
     case actionTypes.EDIT_LODGE_FAIL:
       return editLodgeFail(state, action)
-
+    case actionTypes.ADD_LODGE_SUCCESS:
+      return addLodgeSuccess(state, action)
+    case actionTypes.ADD_LODGE_FAIL:
+      return addLodgeFail(state, action)
     default: return state
   }
 }

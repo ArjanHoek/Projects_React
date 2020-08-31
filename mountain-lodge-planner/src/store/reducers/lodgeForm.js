@@ -23,6 +23,10 @@ const setLodgeData = (action) => {
   }
 }
 
+const resetLodgeData = () => {
+  return initialState
+}
+
 const changeInput = (state, action) => {
   const lodgeData = { ...state.lodgeData, [action.name]: action.value.toLowerCase() }
   return { ...state, lodgeData }
@@ -60,6 +64,8 @@ const lodgeFormReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.SET_LODGE_DATA:
       return setLodgeData(action)
+    case actionTypes.RESET_LODGE_DATA:
+      return resetLodgeData()
     case actionTypes.CHANGE_INPUT:
       return changeInput(state, action)
     case actionTypes.ADD_ADJACENT_LODGE:

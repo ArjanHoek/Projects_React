@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import classes from './LodgeForm.module.css'
-import HeadingSecondary from '../../components/UI/Heading/HeadingSecondary/HeadingSecondary';
 import AddAdjacentLodge from '../../components/AddAdjacentLodge/AddAdjacentLodge';
 
 import sort from '../../utilities/sort'
@@ -10,11 +9,15 @@ import * as actionCreators from '../../store/actions/lodgeForm'
 
 class Form extends Component {
   componentDidMount() {
-    const lodge = this.props.lodges
-      .find(lodge => lodge.name === this.props.match.params.id)
-    lodge
-      ? this.props.onSetLodgeData(lodge)
-      : this.props.history.push('/')
+    if (this.props.paramsID) {
+      console.log('test');
+      const lodge = this.props.lodges
+        .find(lodge => lodge.name === this.props.paramsID)
+      lodge
+        ? this.props.onSetLodgeData(lodge)
+        : this.props.history.push('/')
+    }
+
   }
 
   render() {
@@ -43,7 +46,6 @@ class Form extends Component {
       <form
         className={classes.LodgeForm}
       >
-        <HeadingSecondary>Edit Lodge Data</HeadingSecondary>
         <div className={classes.InputControl}>
           <label>Name</label>
           <input

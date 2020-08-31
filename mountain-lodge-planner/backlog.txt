@@ -1,6 +1,9 @@
 TO DO
-# When opening the navigation menu, make it disappear when user clicks outside the menu
+# The navigation menu should disappear when clicking outside of the menu
 # Organise the application by creating more components
+# The code of the async functions in the lodges.js (in the actions folder) needs some refactoring, it's a chaos
+# The two input handlers at the top in the AddAdjacentLodge component have to move to the appropriate action creator file
+
 
 DONE
 # Show 'Editing data...' spinner after editing lodge
@@ -9,6 +12,6 @@ DONE
 # Add the option to add neighbouring lodges
   - Make sure to also adjust the data of the neighbouring lodge
 # Deleting an adjacent lodges causes some major problems. Maybe adding a state in the SelectAdjacentLodge component will fix this. - The problem was solved by creating a unique id for each SelectAdjacentLodge component that is NOT the index of its place in the array. Using the index causes problems when the array in the state is updated.
-# In the adjacent lodge select options, the lodge itself should not be an option. Filter this one out. - Not only the lodge itself, but any other lodge that is already choses is also filtered out. Therefore, there is no way to add the same lodge twice.
+# In the adjacent lodge select options, the lodge itself should not be an option. Filter this one out. - Not only the lodge itself, but any other lodge that is already chosen is also filtered out. Therefore, there is no way to add the same lodge twice, which in turn prevents having two select elements with the same key (since the key of the select element is based on its current value).
 # Make sure that a new window starts at the top of the page and not at the same scroll level as the previous component.
-# Prevent the router to go to the previous page when a user clicks cancel after clicking delete (intentionally or intentionally, who knows) in the edit window
+# Prevent the router from going to the previous page when a user clicks cancel after clicking delete (intentionally or intentionally, who knows) in the edit window

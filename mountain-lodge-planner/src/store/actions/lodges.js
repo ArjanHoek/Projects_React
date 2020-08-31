@@ -32,6 +32,14 @@ const editLodgeFail = error => {
   return { type: actionTypes.EDIT_LODGE_FAIL, error }
 }
 
+const addLodgeSuccess = lodges => {
+  return { type: actionTypes.ADD_LODGE_SUCCESS, lodges }
+}
+
+const addLodgeFail = error => {
+  return { type: actionTypes.ADD_LODGE_FAIL, error }
+}
+
 // ASYNC FUNCTIONS
 export const updateData = () => dispatch => {
   dispatch(startLoading('Retrieving data...'))
@@ -69,7 +77,6 @@ export const deleteLodge = id => dispatch => {
 
 export const editLodge = (id, lodgeData) => dispatch => {
   dispatch(startLoading('Editing data...'));
-  console.log(lodgeData);
   setTimeout(() => {
     axios.get('/lodges.json')
       .then(res => {
@@ -98,4 +105,20 @@ export const editLodge = (id, lodgeData) => dispatch => {
       })
       .catch(err => dispatch(editLodgeFail(err)))
   }, 500);
+}
+
+
+
+export const addLodge = lodgeData => dispatch => {
+  dispatch(startLoading('Adding lodge...'));
+  setTimeout(() => {
+    axios.post('/lodges.json', lodgeData)
+      .then(() => {
+        dispatch(startLoading('Updating data...'));
+        axios.get('/lodges.json')
+          .then(res => dispatch(addLodgeSuccess(remodelData(res.data))))
+          .catch(err => dispatch(addLodgeFail(err)))
+      })
+      .catch(err => dispatch(addLodgeFail(err)));
+  }, 800);
 }
